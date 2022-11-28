@@ -1,0 +1,43 @@
+<!--<table>
+    <tr *ngFor="let p of products">
+        <td>{{p.id}}</td>
+        <td>{{p.title}}</td>
+        <td>{{p.price}}</td>
+        <td>{{p.quantity}}</td>
+        <td>{{p.picture}}</td>
+        <td>{{p.like}}</td>
+        <td><button (click)="BuyProduct(p.id)" [disabled]="p.quantity == 0">Buy</button></td>
+        <td><button (click)="LikeProduct(p.id)" >Like</button></td>
+        <td *ngIf="p.like > 10">Best Product</td>
+
+    </tr>
+</table>
+-->
+
+<div class="container">
+  <div class="row">
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Search:</label>
+    <input type="text" class="form-control" name="search" [(ngModel)]="search">
+  </div>
+  <button class="btn btn-primary" (click)="SearchProduct()">Search</button>
+
+  <div class="col-4" *ngFor="let p of products">
+    <div class="card" style="width: 18rem;">
+      <img src={{p.picture}} class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">{{p.title}}</h5>
+        <p class="card-text">Price : {{p.price}}</p>
+        <p class="card-text">Quantity : {{p.quantity}}</p>
+        <p class="card-text">Like : {{p.like}}</p>
+        <button type="button" class="btn btn-outline-success" (click)="LikeProduct(p.id)">like</button>
+        <button class="btn btn-outline-success" (click)="BuyProduct(p.id)" [disabled]="p.quantity == 0">Buy</button>
+        <button class="btn btn-outline-success" [routerLink]="['/product',p.id]" >Details</button>
+
+    </div>
+  </div>
+</div>
+<button class="btn btn-outline-success" (click)="functionVerification()" >Vérifier</button>
+{{res}}
+
+</div>

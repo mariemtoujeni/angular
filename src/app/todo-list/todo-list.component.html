@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="row">
+    <div class="col-4" *ngFor="let x of listTodo">
+      <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title">{{x.title}}</h5>
+          <h5 class="card-title">{{x.id}}</h5>
+          <h5 class="card-title">{{x.userId}}</h5>
+          <h5 class="card-title">{{x.completed}}</h5>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <a class="btn btn-primary" (click)="functionBilan()">Bilan</a>
+  {{res}}
+</div>
